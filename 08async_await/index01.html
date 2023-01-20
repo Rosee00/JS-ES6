@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //동기적 callback VS 비동기적 callback
+
+        //동기적 콜백
+        function aaa(func) {
+            func("success");//함수를 대신실행시켜줌
+        }  
+
+        //비동기적 콜백
+        function bbb(func) {
+            setTimeout(function() {
+                func("success");
+            }, 2000);
+        }
+
+
+        //동기적 콜백의 반환
+        console.log(1);
+        aaa(function(result) {
+            console.log(result); //결과가 10이다.
+        });
+
+        //비동기적 콜백의 반환
+        bbb(function(result){
+            console.log(result);
+        })
+
+
+
+
+    </script>
+
+</body>
+</html>
